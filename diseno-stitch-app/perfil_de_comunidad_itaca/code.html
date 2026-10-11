@@ -1,0 +1,137 @@
+<!DOCTYPE html><html class="h-full" lang="es" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><title>Custodio Comunitario - AIDER</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'on-tertiary-fixed-variant': '#6e3900', 'surface': '#f8f9ff', 'on-primary-fixed': '#002117', 'tertiary-container': '#4f2700', 'tertiary-fixed': '#ffdcc3', 'surface-container': '#e6eeff', 'tertiary-fixed-dim': '#ffb77d', 'surface-container-highest': '#d9e3f6', 'background': '#f8f9ff', 'on-primary-container': '#79a292', 'on-background': '#121c2a', 'primary-container': '#0f382c', 'inverse-on-surface': '#eaf1ff', 'primary': '#002218', 'surface-tint': '#3f6658', 'on-secondary-fixed-variant': '#005323', 'on-secondary': '#ffffff', 'secondary-fixed': '#95f8a7', 'error': '#ba1a1a', 'on-error-container': '#93000a', 'inverse-primary': '#a6d0be', 'surface-container-lowest': '#ffffff', 'on-primary': '#ffffff', 'inverse-surface': '#27313f', 'surface-container-low': '#eff4ff', 'on-tertiary-fixed': '#2f1500', 'surface-variant': '#d9e3f6', 'on-secondary-container': '#007233', 'outline-variant': '#c1c8c3', 'error-container': '#ffdad6', 'outline': '#717975', 'on-tertiary-container': '#e48015', 'surface-bright': '#f8f9ff', 'secondary-container': '#92f5a4', 'on-tertiary': '#ffffff', 'surface-dim': '#d0dbed', 'primary-fixed-dim': '#a6d0be', 'primary-fixed': '#c1ecda', 'secondary': '#006d30', 'tertiary': '#301600', 'on-primary-fixed-variant': '#274e41', 'surface-container-high': '#dee9fc', 'secondary-fixed-dim': '#79db8d', 'on-error': '#ffffff', 'on-surface-variant': '#414845', 'on-surface': '#121c2a', 'on-secondary-fixed': '#00210a' }, borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' }, spacing: { 'gutter': '1rem', 'margin': '1.25rem', 'space-md': '1rem', 'space-sm': '0.75rem', 'space-xs': '0.5rem', 'space-lg': '1.5rem', 'space-xl': '2rem' }, fontFamily: { 'body-md': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'label-status': ['Plus Jakarta Sans'], 'headline-md': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'], 'body-sm': ['Plus Jakarta Sans'], 'headline-xl': ['Plus Jakarta Sans'], 'label-action': ['Plus Jakarta Sans'], 'body-xl': ['Plus Jakarta Sans'] }, fontSize: { 'body-md': ['18px', { lineHeight: '28px', fontWeight: '400' }], 'headline-lg': ['30px', { lineHeight: '38px', letterSpacing: '-0.01em', fontWeight: '700' }], 'label-status': ['16px', { lineHeight: '22px', letterSpacing: '0.04em', fontWeight: '700' }], 'headline-md': ['26px', { lineHeight: '34px', fontWeight: '700' }], 'body-lg': ['20px', { lineHeight: '30px', fontWeight: '400' }], 'body-sm': ['16px', { lineHeight: '24px', fontWeight: '500' }], 'headline-xl': ['36px', { lineHeight: '44px', letterSpacing: '-0.02em', fontWeight: '800' }], 'label-action': ['22px', { lineHeight: '28px', letterSpacing: '0.01em', fontWeight: '700' }], 'body-xl': ['22px', { lineHeight: '32px', fontWeight: '500' }] } } } };</script><style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9ff;
+      }
+      body {
+        overscroll-behavior: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    
+    /* Scrollbar visible y estilizado para facilitar desplazamiento */
+    .custom-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: #0f382c #e6eeff;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      display: block;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #e6eeff;
+      border-radius: 9999px;
+      margin: 4px 0;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #0f382c;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #002218;
+    }
+  </style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="flex flex-col h-full overflow-hidden bg-surface text-on-surface font-headline-md" data-mode="connect"><header class="fixed top-0 w-full z-50 bg-primary-container text-on-primary pt-safe shadow-[0_4px_16px_rgba(0,34,24,0.18)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Volver" class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary active:scale-95 transition-transform" onclick="if (window.history.length &gt; 1) { history.back(); } else { window.location.href='#inicio'; }"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary-container text-[26px]">forest</span><h1 class="font-headline-md text-body-md font-bold text-on-primary truncate">Perfil de la Comunidad</h1></div></div></div></header><main class="flex flex-col relative w-full pt-[4.25rem] pb-safe px-margin bg-surface flex-1 h-full overflow-hidden"><div class="flex flex-col w-full h-full overflow-y-auto pb-8 gap-space-md pt-2"><!-- Identidad de la Comunidad --><div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md flex items-center justify-between gap-space-sm"><div class="flex flex-col min-w-0"><span class="font-label-status text-[13px] text-secondary font-bold uppercase tracking-wide">Comunidad Campesina</span><h2 class="font-headline-lg text-headline-lg text-primary-container font-extrabold truncate mt-0.5">COMUNIDAD ITACA</h2><div class="flex items-center gap-1 mt-1 text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-primary-container">location_on</span><span class="font-body-sm text-body-sm truncate">Madre de Dios, Tambopata, Perú</span></div></div><div class="w-14 h-14 rounded-xl bg-surface-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-headline-xl text-primary-container" style="font-variation-settings: 'FILL' 1;">shield_person</span></div></div><!-- Visor de 4 Indicadores Métricos --><div class="grid grid-cols-2 gap-space-sm"><!-- Indicador 1: Patrulleros acreditados --><div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between border-t-2 border-primary-container"><div class="flex items-center justify-between"><span class="material-symbols-outlined text-primary-container text-[22px]">groups</span><span class="font-label-status text-[11px] bg-surface-container px-2 py-0.5 rounded-full font-bold text-primary-container">ACTIVOS</span></div><div class="mt-3"><span class="font-headline-xl text-[32px] leading-tight font-extrabold text-primary-container block">14</span><span class="font-label-status text-[12px] text-on-surface-variant font-semibold leading-tight block mt-1">Custodios / Patrulleros acreditados</span></div></div><!-- Indicador 2: Km recorridos --><div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between border-t-2 border-secondary"><div class="flex items-center justify-between"><span class="material-symbols-outlined text-secondary text-[22px]">route</span><span class="font-label-status text-[11px] bg-secondary-container/40 px-2 py-0.5 rounded-full font-bold text-secondary">TOTAL</span></div><div class="mt-3"><span class="font-headline-xl text-[30px] leading-tight font-extrabold text-primary-container block">342.8 <span class="text-[18px] font-bold text-on-surface-variant">km</span></span><span class="font-label-status text-[12px] text-on-surface-variant font-semibold leading-tight block mt-1">Km recorridos</span></div></div><!-- Indicador 3: Patrullajes realizados --><div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between border-t-2 border-primary-container"><div class="flex items-center justify-between"><span class="material-symbols-outlined text-primary-container text-[22px]">flag</span><span class="font-label-status text-[11px] bg-surface-container px-2 py-0.5 rounded-full font-bold text-primary-container">REGISTRO</span></div><div class="mt-3"><span class="font-headline-xl text-[32px] leading-tight font-extrabold text-primary-container block">58</span><span class="font-label-status text-[12px] text-on-surface-variant font-semibold leading-tight block mt-1">Patrullajes realizados</span></div></div><!-- Indicador 4: Evidencias registradas --><div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between border-t-2 border-secondary"><div class="flex items-center justify-between"><span class="material-symbols-outlined text-secondary text-[22px]">fact_check</span><span class="font-label-status text-[11px] bg-secondary-container/40 px-2 py-0.5 rounded-full font-bold text-secondary">ARCHIVOS</span></div><div class="mt-3"><span class="font-headline-xl text-[32px] leading-tight font-extrabold text-primary-container block">186</span><span class="font-label-status text-[12px] text-on-surface-variant font-semibold leading-tight block mt-1">Evidencias registradas</span></div></div></div><!-- Zona de Vigilancia Asignada --><div class="bg-primary-container text-on-primary rounded-xl p-space-md shadow-lg flex flex-col gap-2 relative overflow-hidden"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary-fixed text-[24px]" style="font-variation-settings: 'FILL' 1;">verified_user</span><span class="font-label-status text-[12px] text-secondary-fixed uppercase tracking-wider font-bold">Zona de Vigilancia Asignada</span></div><p class="font-headline-md text-[18px] text-on-primary font-bold leading-snug">Sector Cuenca Norte – Bosque Comunitario ITACA</p><div class="bg-primary/60 rounded-lg p-2.5 mt-1 border border-primary-fixed-dim/20"><p class="font-body-sm text-[13px] text-primary-fixed leading-relaxed">Límites: Quebrada Pariamanu – Hito Frontera Este 14B</p></div></div><!-- Botones de Acción --><div class="flex flex-col gap-3 mt-1"><a class="w-full h-14 rounded-xl bg-surface-container-high text-primary-container flex items-center justify-center gap-2 shadow-sm font-label-action text-[16px] font-bold tracking-wide active:scale-[0.98] transition-transform text-center" href="#historial-recorridos"><span class="material-symbols-outlined text-[22px]">manage_search</span><span>REVISAR REGISTROS</span></a><a class="w-full h-14 rounded-xl border-2 border-error/40 bg-surface-container-lowest text-error flex items-center justify-center gap-2 shadow-sm font-label-action text-[16px] font-bold tracking-wide active:scale-[0.98] transition-transform text-center" href="#login"><span class="material-symbols-outlined text-[22px]">logout</span><span>CERRAR SESIÓN</span></a></div></div></main>
+<script>
+  (function initCustodianSelector() {
+    const buttons = document.querySelectorAll('.custodian-btn');
+    const confirmBtn = document.getElementById('btn-confirm-patrol');
+    const confirmLabel = document.getElementById('btn-confirm-label');
+    
+    let selectedCustodian = "Roberto Mamani Quispe";
+
+    function selectCustodian(selectedBtn) {
+      // Deseleccionar todas las burbujas
+      buttons.forEach(btn => {
+        btn.setAttribute('aria-checked', 'false');
+        btn.classList.remove('bg-[#0F382C]', 'text-white', 'shadow-md', 'ring-2', 'ring-primary-fixed-dim');
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+
+        const textSpan = btn.querySelector('.custodian-text');
+        if (textSpan) {
+          textSpan.classList.remove('text-white');
+          textSpan.classList.add('text-on-surface');
+        }
+
+        const iconSpan = btn.querySelector('.check-icon');
+        if (iconSpan) {
+          iconSpan.classList.add('hidden');
+          iconSpan.classList.remove('flex');
+        }
+      });
+
+      // Activar exclusivamente el seleccionado
+      selectedBtn.setAttribute('aria-checked', 'true');
+      selectedBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+      selectedBtn.classList.add('bg-[#0F382C]', 'text-white', 'shadow-md', 'ring-2', 'ring-primary-fixed-dim');
+
+      const activeTextSpan = selectedBtn.querySelector('.custodian-text');
+      if (activeTextSpan) {
+        activeTextSpan.classList.remove('text-on-surface');
+        activeTextSpan.classList.add('text-white');
+      }
+
+      const activeIconSpan = selectedBtn.querySelector('.check-icon');
+      if (activeIconSpan) {
+        activeIconSpan.classList.remove('hidden');
+        activeIconSpan.classList.add('flex');
+      }
+
+      selectedCustodian = selectedBtn.dataset.name;
+
+      // Actualizar botón de acción inferior
+      if (confirmBtn) {
+        confirmBtn.removeAttribute('disabled');
+        confirmBtn.classList.remove('opacity-60', 'pointer-events-none');
+      }
+      if (confirmLabel) {
+        confirmLabel.textContent = `CONFIRMAR Y EMPEZAR`;
+      }
+    }
+
+    // Registrar eventos táctiles y de teclado
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => selectCustodian(btn));
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          selectCustodian(btn);
+        }
+      });
+    });
+
+    // Acción de confirmación con feedback visual
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        const originalContent = confirmBtn.innerHTML;
+        confirmBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[28px] animate-spin">progress_activity</span>
+          <span>INICIANDO CON ${selectedCustodian.toUpperCase()}...</span>
+        `;
+        confirmBtn.classList.add('pointer-events-none', 'opacity-90');
+
+        setTimeout(() => {
+          alert('Custodio asignado: ' + selectedCustodian + '\\n\\nPatrullaje iniciado con coordenadas GPS activadas.');
+          confirmBtn.innerHTML = originalContent;
+          confirmBtn.classList.remove('pointer-events-none', 'opacity-90');
+        }, 800);
+      });
+    }
+  })();
+</script>
+</body></html>

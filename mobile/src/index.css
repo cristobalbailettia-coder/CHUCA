@@ -1,0 +1,174 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* CHUCA · Manual de identidad visual v1.1: verde bosque #103C26, amarillo solar #F9CD3B, oro seco #E9A622,
+   ocre tierra #C88229 y arena clara #F5E4B6. Lato en toda la interfaz. Letra grande, alto contraste, botones táctiles. */
+@theme {
+  --color-surface: #faf8f2;
+  --color-surface-bright: #faf8f2;
+  --color-surface-dim: #e6dcc0;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f0e0;
+  --color-surface-container: #f1e9d0;
+  --color-surface-container-high: #ece1bf;
+  --color-surface-container-highest: #e6d9ae;
+  --color-on-surface: #1f2a22;
+  --color-on-surface-variant: #4f5648;
+  --color-inverse-surface: #103c26;
+  --color-inverse-on-surface: #f5e4b6;
+  --color-outline: #7d7f69;
+  --color-outline-variant: #d9cfae;
+  --color-primary: #0a2a1a;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #103c26;
+  --color-on-primary-container: #f5e4b6;
+  --color-primary-fixed: #f5e4b6;
+  --color-primary-fixed-dim: #e9a622;
+  --color-secondary: #2d6a3e;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #f9cd3b;
+  --color-on-secondary-container: #103c26;
+  --color-secondary-fixed: #f9cd3b;
+  --color-secondary-fixed-dim: #e9a622;
+  --color-on-secondary-fixed: #103c26;
+  --color-tertiary: #4a2a0b;
+  --color-tertiary-container: #7a4a1d;
+  --color-on-tertiary-container: #f5e4b6;
+  --color-tertiary-fixed: #fbefc9;
+  --color-tertiary-fixed-dim: #e9a622;
+  --color-on-tertiary-fixed: #4a2a0b;
+  --color-on-tertiary-fixed-variant: #7a4a1d;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --spacing-gutter: 1rem;
+  --spacing-margin: 1.25rem;
+  --spacing-space-xs: 0.5rem;
+  --spacing-space-sm: 0.75rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2rem;
+
+  --font-sans: Lato, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-headline-xl: 36px;
+  --text-headline-xl--line-height: 44px;
+  --text-headline-xl--font-weight: 800;
+  --text-headline-lg: 30px;
+  --text-headline-lg--line-height: 38px;
+  --text-headline-lg--font-weight: 700;
+  --text-headline-md: 26px;
+  --text-headline-md--line-height: 34px;
+  --text-headline-md--font-weight: 700;
+  --text-body-xl: 22px;
+  --text-body-xl--line-height: 32px;
+  --text-body-xl--font-weight: 500;
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 30px;
+  --text-body-md: 18px;
+  --text-body-md--line-height: 28px;
+  --text-body-sm: 16px;
+  --text-body-sm--line-height: 24px;
+  --text-body-sm--font-weight: 500;
+  --text-label-action: 22px;
+  --text-label-action--line-height: 28px;
+  --text-label-action--font-weight: 700;
+  --text-label-status: 16px;
+  --text-label-status--line-height: 22px;
+  --text-label-status--font-weight: 700;
+}
+
+html,
+body {
+  margin: 0;
+  background: #faf8f2;
+  font-family: Lato, ui-sans-serif, system-ui, sans-serif;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #103c26 #f1e9d0;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  display: block;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1e9d0;
+  border-radius: 9999px;
+  margin: 4px 0;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #103c26;
+  border-radius: 9999px;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+.pulse-ring {
+  animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes barAnim {
+  0%,
+  100% {
+    height: 16%;
+  }
+  50% {
+    height: 95%;
+  }
+}
+.wave-bar {
+  animation: barAnim 1.2s ease-in-out infinite;
+}
+
+.leaflet-container {
+  font-family: inherit;
+  background: #103c26;
+}

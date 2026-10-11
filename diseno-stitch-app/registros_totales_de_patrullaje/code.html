@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Registros de Patrullaje - Custodio Comunitario</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,16px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'on-tertiary-fixed-variant': '#6e3900', 'surface': '#f8f9ff', 'on-primary-fixed': '#002117', 'tertiary-container': '#4f2700', 'tertiary-fixed': '#ffdcc3', 'surface-container': '#e6eeff', 'tertiary-fixed-dim': '#ffb77d', 'surface-container-highest': '#d9e3f6', 'background': '#f8f9ff', 'on-primary-container': '#79a292', 'on-background': '#121c2a', 'primary-container': '#0f382c', 'inverse-on-surface': '#eaf1ff', 'primary': '#002218', 'surface-tint': '#3f6658', 'on-secondary-fixed-variant': '#005323', 'on-secondary': '#ffffff', 'secondary-fixed': '#95f8a7', 'error': '#ba1a1a', 'on-error-container': '#93000a', 'inverse-primary': '#a6d0be', 'surface-container-lowest': '#ffffff', 'on-primary': '#ffffff', 'inverse-surface': '#27313f', 'surface-container-low': '#eff4ff', 'on-tertiary-fixed': '#2f1500', 'surface-variant': '#d9e3f6', 'on-secondary-container': '#007233', 'outline-variant': '#c1c8c3', 'error-container': '#ffdad6', 'outline': '#717975', 'on-tertiary-container': '#e48015', 'surface-bright': '#f8f9ff', 'secondary-container': '#92f5a4', 'on-tertiary': '#ffffff', 'surface-dim': '#d0dbed', 'primary-fixed-dim': '#a6d0be', 'primary-fixed': '#c1ecda', 'secondary': '#006d30', 'tertiary': '#301600', 'on-primary-fixed-variant': '#274e41', 'surface-container-high': '#dee9fc', 'secondary-fixed-dim': '#79db8d', 'on-error': '#ffffff', 'on-surface-variant': '#414845', 'on-surface': '#121c2a', 'on-secondary-fixed': '#00210a' }, borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' }, spacing: { 'gutter': '1rem', 'margin': '1.25rem', 'space-md': '1rem', 'space-sm': '0.75rem', 'space-xs': '0.5rem', 'space-lg': '1.5rem', 'space-xl': '2rem' }, fontFamily: { 'body-md': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'label-status': ['Plus Jakarta Sans'], 'headline-md': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'], 'body-sm': ['Plus Jakarta Sans'], 'headline-xl': ['Plus Jakarta Sans'], 'label-action': ['Plus Jakarta Sans'], 'body-xl': ['Plus Jakarta Sans'] } } } };</script></head><body class="bg-surface text-on-surface font-body-md flex flex-col h-screen overflow-hidden">
+<!-- Header Principal -->
+<header class="fixed top-0 w-full z-50 bg-primary-container text-on-primary pt-safe shadow-[0_4px_16px_rgba(0,34,24,0.18)]">
+<div class="h-16 px-margin flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<button aria-label="Volver" class="min-w-[44px] min-h-[44px] rounded-xl bg-primary flex items-center justify-center text-on-primary active:scale-95 transition-transform" onclick="history.back()">
+<span class="material-symbols-outlined text-[26px]">arrow_back</span>
+</button>
+<div class="flex flex-col min-w-0">
+<h1 class="font-headline-md text-[17px] font-extrabold text-on-primary leading-tight truncate">Registros de Patrullaje</h1>
+<div class="flex items-center gap-1.5 text-[11px] text-primary-fixed">
+<span class="material-symbols-outlined text-[13px]">forest</span>
+<span class="font-medium tracking-wide">Comunidad ITACA · Tambopata</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<div class="bg-primary/90 text-primary-fixed border border-primary-fixed/20 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="font-label-status text-[11px] font-bold tracking-wider">58 TOTAL</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Contenido Principal con Scroll Suave -->
+<main class="flex flex-col flex-1 w-full pt-[72px] pb-safe px-margin bg-surface overflow-y-auto overflow-x-hidden">
+<!-- Barra Superior de Resumen y Filtro -->
+<div class="py-2.5 flex items-center justify-between gap-2 border-b border-surface-container-high/80 mb-3 shrink-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+<span class="font-headline-md text-[13px] font-bold text-on-surface">Historial de Salidas</span>
+<span class="bg-surface-container-highest text-on-surface-variant font-bold text-[11px] px-2 py-0.5 rounded-full">58 registros</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2.5 py-1 rounded-lg border border-outline-variant/40 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">sort</span>
+<span class="text-[11px] font-semibold">Más recientes primero</span>
+</div>
+</div>
+<!-- Lista de Registros -->
+<div class="flex flex-col gap-3.5 pb-6">
+<!-- Registro 1: Normal (Verde) - Hoy -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border-l-4 border-l-secondary border border-surface-container-high shadow-sm flex flex-col gap-2.5 active:scale-[0.99] transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-md text-[15px] font-extrabold text-on-surface leading-snug">Registro del 24 Octubre 2024</span>
+<div class="flex items-center gap-1 text-[12px] text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary">person</span>
+<span>Custodio: <strong class="text-on-surface font-semibold">Manuel Sinchi Huamán</strong></span>
+</div>
+</div>
+<!-- Indicador Normal Verde -->
+<span class="inline-flex items-center gap-1 bg-secondary-container/40 text-on-secondary-container px-2.5 py-1 rounded-full text-[11px] font-bold shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Sin SOS / Normal
+          </span>
+</div>
+<!-- Tiempo y Distancia -->
+<div class="flex items-center gap-3 bg-surface-container-low/80 px-2.5 py-1.5 rounded-xl text-[12px] font-medium text-on-surface">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+<span>01h 42m</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">route</span>
+<span>1.8 km</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>11:30 AM</span>
+</div>
+</div>
+<!-- Evidencias -->
+<div class="flex items-center justify-between pt-1 border-t border-surface-container-high">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-[11px] font-bold text-on-surface-variant mr-1">5 evidencias:</span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">photo_camera</span> 3 fotos
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">mic</span> 1 audio
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">edit_note</span> 1 nota
+            </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</div>
+</article>
+<!-- Registro 2: Alerta SOS (Rojo) - Ayer -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border-l-4 border-l-error border border-error-container shadow-sm flex flex-col gap-2.5 active:scale-[0.99] transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-[15px] font-extrabold text-on-surface leading-snug">Registro del 23 Octubre 2024</span>
+</div>
+<div class="flex items-center gap-1 text-[12px] text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary">person</span>
+<span>Custodio: <strong class="text-on-surface font-semibold">Carlos Mendoza Quispe</strong></span>
+</div>
+</div>
+<!-- Indicador SOS Rojo -->
+<span class="inline-flex items-center gap-1 bg-error-container text-on-error-container px-2.5 py-1 rounded-full text-[11px] font-bold shrink-0 animate-pulse">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+            Alerta SOS Registrada
+          </span>
+</div>
+<!-- Tiempo y Distancia -->
+<div class="flex items-center gap-3 bg-surface-container-low/80 px-2.5 py-1.5 rounded-xl text-[12px] font-medium text-on-surface">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+<span>03h 15m</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">route</span>
+<span>5.2 km</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>04:15 PM</span>
+</div>
+</div>
+<!-- Evidencias con Badge SOS destacado -->
+<div class="flex items-center justify-between pt-1 border-t border-surface-container-high">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-[11px] font-bold text-on-surface-variant mr-1">8 evidencias:</span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">photo_camera</span> 4 fotos
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">mic</span> 2 audios
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">edit_note</span> 1 nota
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-error text-on-error px-2 py-0.5 rounded text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">emergency</span> 1 SOS
+            </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</div>
+</article>
+<!-- Registro 3: Normal (Verde) -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border-l-4 border-l-secondary border border-surface-container-high shadow-sm flex flex-col gap-2.5 active:scale-[0.99] transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-md text-[15px] font-extrabold text-on-surface leading-snug">Registro del 20 Octubre 2024</span>
+<div class="flex items-center gap-1 text-[12px] text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary">person</span>
+<span>Custodia: <strong class="text-on-surface font-semibold">Elena Lucas Vargas</strong></span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 bg-secondary-container/40 text-on-secondary-container px-2.5 py-1 rounded-full text-[11px] font-bold shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Sin SOS / Normal
+          </span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low/80 px-2.5 py-1.5 rounded-xl text-[12px] font-medium text-on-surface">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+<span>02h 30m</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">route</span>
+<span>3.4 km</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>09:10 AM</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container-high">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-[11px] font-bold text-on-surface-variant mr-1">4 evidencias:</span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">photo_camera</span> 2 fotos
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">mic</span> 2 audios
+            </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</div>
+</article>
+<!-- Registro 4: Alerta SOS (Rojo) -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border-l-4 border-l-error border border-error-container shadow-sm flex flex-col gap-2.5 active:scale-[0.99] transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-md text-[15px] font-extrabold text-on-surface leading-snug">Registro del 16 Octubre 2024</span>
+<div class="flex items-center gap-1 text-[12px] text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary">person</span>
+<span>Custodio: <strong class="text-on-surface font-semibold">Roberto Huallpa Choque</strong></span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 bg-error-container text-on-error-container px-2.5 py-1 rounded-full text-[11px] font-bold shrink-0 animate-pulse">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+            Alerta SOS Registrada
+          </span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low/80 px-2.5 py-1.5 rounded-xl text-[12px] font-medium text-on-surface">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+<span>04h 10m</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">route</span>
+<span>6.7 km</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>02:40 PM</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container-high">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-[11px] font-bold text-on-surface-variant mr-1">9 evidencias:</span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">photo_camera</span> 5 fotos
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">mic</span> 2 audios
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">edit_note</span> 1 nota
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-error text-on-error px-2 py-0.5 rounded text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">emergency</span> 1 SOS
+            </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</div>
+</article>
+<!-- Registro 5: Normal (Verde) -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border-l-4 border-l-secondary border border-surface-container-high shadow-sm flex flex-col gap-2.5 active:scale-[0.99] transition-transform">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-md text-[15px] font-extrabold text-on-surface leading-snug">Registro del 12 Octubre 2024</span>
+<div class="flex items-center gap-1 text-[12px] text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary">person</span>
+<span>Custodio: <strong class="text-on-surface font-semibold">Manuel Sinchi Huamán</strong></span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 bg-secondary-container/40 text-on-secondary-container px-2.5 py-1 rounded-full text-[11px] font-bold shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Sin SOS / Normal
+          </span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low/80 px-2.5 py-1.5 rounded-xl text-[12px] font-medium text-on-surface">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+<span>01h 55m</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">route</span>
+<span>2.6 km</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>08:15 AM</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container-high">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-[11px] font-bold text-on-surface-variant mr-1">3 evidencias:</span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">photo_camera</span> 2 fotos
+            </span>
+<span class="inline-flex items-center gap-0.5 bg-surface-container px-2 py-0.5 rounded text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">edit_note</span> 1 nota
+            </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</div>
+</article>
+</div>
+</main>
+</body></html>

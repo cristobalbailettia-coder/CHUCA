@@ -1,0 +1,254 @@
+<!DOCTYPE html><html class="h-full" lang="es" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><title>Custodio Comunitario - AIDER</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'on-tertiary-fixed-variant': '#6e3900', 'surface': '#f8f9ff', 'on-primary-fixed': '#002117', 'tertiary-container': '#4f2700', 'tertiary-fixed': '#ffdcc3', 'surface-container': '#e6eeff', 'tertiary-fixed-dim': '#ffb77d', 'surface-container-highest': '#d9e3f6', 'background': '#f8f9ff', 'on-primary-container': '#79a292', 'on-background': '#121c2a', 'primary-container': '#0f382c', 'inverse-on-surface': '#eaf1ff', 'primary': '#002218', 'surface-tint': '#3f6658', 'on-secondary-fixed-variant': '#005323', 'on-secondary': '#ffffff', 'secondary-fixed': '#95f8a7', 'error': '#ba1a1a', 'on-error-container': '#93000a', 'inverse-primary': '#a6d0be', 'surface-container-lowest': '#ffffff', 'on-primary': '#ffffff', 'inverse-surface': '#27313f', 'surface-container-low': '#eff4ff', 'on-tertiary-fixed': '#2f1500', 'surface-variant': '#d9e3f6', 'on-secondary-container': '#007233', 'outline-variant': '#c1c8c3', 'error-container': '#ffdad6', 'outline': '#717975', 'on-tertiary-container': '#e48015', 'surface-bright': '#f8f9ff', 'secondary-container': '#92f5a4', 'on-tertiary': '#ffffff', 'surface-dim': '#d0dbed', 'primary-fixed-dim': '#a6d0be', 'primary-fixed': '#c1ecda', 'secondary': '#006d30', 'tertiary': '#301600', 'on-primary-fixed-variant': '#274e41', 'surface-container-high': '#dee9fc', 'secondary-fixed-dim': '#79db8d', 'on-error': '#ffffff', 'on-surface-variant': '#414845', 'on-surface': '#121c2a', 'on-secondary-fixed': '#00210a' }, borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' }, spacing: { 'gutter': '1rem', 'margin': '1.25rem', 'space-md': '1rem', 'space-sm': '0.75rem', 'space-xs': '0.5rem', 'space-lg': '1.5rem', 'space-xl': '2rem' }, fontFamily: { 'body-md': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'label-status': ['Plus Jakarta Sans'], 'headline-md': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'], 'body-sm': ['Plus Jakarta Sans'], 'headline-xl': ['Plus Jakarta Sans'], 'label-action': ['Plus Jakarta Sans'], 'body-xl': ['Plus Jakarta Sans'] }, fontSize: { 'body-md': ['18px', { lineHeight: '28px', fontWeight: '400' }], 'headline-lg': ['30px', { lineHeight: '38px', letterSpacing: '-0.01em', fontWeight: '700' }], 'label-status': ['16px', { lineHeight: '22px', letterSpacing: '0.04em', fontWeight: '700' }], 'headline-md': ['26px', { lineHeight: '34px', fontWeight: '700' }], 'body-lg': ['20px', { lineHeight: '30px', fontWeight: '400' }], 'body-sm': ['16px', { lineHeight: '24px', fontWeight: '500' }], 'headline-xl': ['36px', { lineHeight: '44px', letterSpacing: '-0.02em', fontWeight: '800' }], 'label-action': ['22px', { lineHeight: '28px', letterSpacing: '0.01em', fontWeight: '700' }], 'body-xl': ['22px', { lineHeight: '32px', fontWeight: '500' }] } } } };</script><style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9ff;
+      }
+      body {
+        overscroll-behavior: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    
+    /* Scrollbar visible y estilizado para facilitar desplazamiento */
+    .custom-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: #0f382c #e6eeff;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      display: block;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #e6eeff;
+      border-radius: 9999px;
+      margin: 4px 0;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #0f382c;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #002218;
+    }
+  </style></head><body class="flex flex-col h-full overflow-hidden bg-surface text-on-surface font-headline-md" data-mode="connect"><header class="fixed top-0 w-full z-50 bg-primary-container text-on-primary pt-safe shadow-[0_4px_16px_rgba(0,34,24,0.18)]"><div class="h-14 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm flex-1"><button aria-label="Volver a Inicio de Patrullaje" class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary active:scale-95 transition-transform shrink-0" onclick="window.location.href='#inicio';"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col"><span class="text-[10px] text-primary-fixed uppercase tracking-wide font-bold">Custodio Rural</span><h1 class="font-headline-md text-body-md font-bold text-on-primary leading-tight tracking-wide">COMUNIDAD ITACA</h1></div></div><div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-secondary-container shrink-0"><span class="material-symbols-outlined text-[26px]">forest</span></div></div></header><main class="flex flex-col relative w-full pt-[4.25rem] pb-safe px-margin bg-surface flex-1 h-full overflow-hidden"><!-- Tarjeta de Encabezado y Contexto Táctil -->
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest p-space-md rounded-xl shadow-md shrink-0 mb-3">
+<div class="flex items-center gap-space-xs">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: &quot;FILL&quot; 1;">badge</span>
+</div>
+<div class="flex flex-col">
+
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight">¿Quién Patrulla Hoy?</h2>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">Selecciona tu nombre y presiona "EMPEZAR"</p>
+</div>
+<!-- Encabezado de la Lista y Contador -->
+<div class="flex items-center justify-between px-1 mb-2 shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">how_to_reg</span>
+<span class="font-label-status text-label-status text-on-surface font-bold">Padrón del Comité&nbsp;</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant font-label-status text-body-sm px-3 py-1 rounded-full font-semibold" id="custodian-counter">
+    12 acreditados
+  </span>
+</div>
+<!-- Contenedor con Scroll Visible y Padding Inferior amplio para que Daniel Apaza Choque sea 100% visible -->
+<div aria-label="Listado de custodios comunitarios" class="custom-scrollbar flex flex-col gap-2.5 overflow-y-auto pr-1 pb-32 flex-1 overscroll-contain" id="custodian-list" role="radiogroup"><!-- 1. Manuel Sinchi Huamán -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl font-headline-md text-body-lg font-bold flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left bg-surface-container-lowest text-on-surface shadow-sm" data-name="Manuel Sinchi Huamán" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Manuel Sinchi Huamán</span>
+<span class="check-icon shrink-0 ml-2 hidden">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 2. Roberto Mamani Quispe (Preseleccionado) -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl font-headline-md text-body-lg font-bold flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left bg-surface-container-lowest text-on-surface shadow-sm" data-name="Roberto Mamani Quispe" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Roberto Mamani Quispe</span>
+<span class="check-icon shrink-0 ml-2 hidden">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 3. Francisca Huanca Pari -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl bg-surface-container-lowest text-on-surface font-headline-md text-body-lg font-bold shadow-sm flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left" data-name="Francisca Huanca Pari" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Francisca Huanca Pari</span>
+<span class="check-icon hidden shrink-0 ml-2">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 4. Juan Carlos Yupanqui -->
+<button aria-checked="true" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl font-headline-md text-body-lg font-bold flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left bg-[#0F382C] text-white shadow-md ring-2 ring-primary-fixed-dim" data-name="Juan Carlos Yupanqui" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-white">Juan Carlos Yupanqui</span>
+<span class="check-icon shrink-0 ml-2 flex">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 5. Carmen Rosa Champi -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl font-headline-md text-body-lg font-bold flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left bg-surface-container-lowest text-on-surface shadow-sm" data-name="Carmen Rosa Champi" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Carmen Rosa Champi</span>
+<span class="check-icon shrink-0 ml-2 hidden">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 6. Elena Lucas Vargas -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl font-headline-md text-body-lg font-bold flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left bg-surface-container-lowest text-on-surface shadow-sm" data-name="Elena Lucas Vargas" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Elena Lucas Vargas</span>
+<span class="check-icon shrink-0 ml-2 hidden">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 7. Eusebio Condori Mamani -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl bg-surface-container-lowest text-on-surface font-headline-md text-body-lg font-bold shadow-sm flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left" data-name="Eusebio Condori Mamani" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Eusebio Condori Mamani</span>
+<span class="check-icon hidden shrink-0 ml-2">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 8. Lidia Quispe Mayhua -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl bg-surface-container-lowest text-on-surface font-headline-md text-body-lg font-bold shadow-sm flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left" data-name="Lidia Quispe Mayhua" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Lidia Quispe Mayhua</span>
+<span class="check-icon hidden shrink-0 ml-2">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 9. Víctor Raúl Cárdenas -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl font-headline-md text-body-lg font-bold flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left bg-surface-container-lowest text-on-surface shadow-sm" data-name="Víctor Raúl Cárdenas" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Víctor Raúl Cárdenas</span>
+<span class="check-icon shrink-0 ml-2 hidden">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 10. Walter Ticona Ramos -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl bg-surface-container-lowest text-on-surface font-headline-md text-body-lg font-bold shadow-sm flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left" data-name="Walter Ticona Ramos" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Walter Ticona Ramos</span>
+<span class="check-icon hidden shrink-0 ml-2">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 11. Rosa María Inquilla -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl bg-surface-container-lowest text-on-surface font-headline-md text-body-lg font-bold shadow-sm flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left" data-name="Rosa María Inquilla" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Rosa María Inquilla</span>
+<span class="check-icon hidden shrink-0 ml-2">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button>
+<!-- 12. Daniel Apaza Choque -->
+<button aria-checked="false" class="custodian-btn w-full min-h-[64px] px-space-md py-space-sm rounded-xl bg-surface-container-lowest text-on-surface font-headline-md text-body-lg font-bold shadow-sm flex items-center justify-between transition-all duration-150 active:scale-[0.98] cursor-pointer text-left" data-name="Daniel Apaza Choque" onclick="(function(btn){document.querySelectorAll('.custodian-btn').forEach(b=&gt;{b.setAttribute('aria-checked','false');b.classList.remove('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');b.classList.add('bg-surface-container-lowest','text-on-surface','shadow-sm');const t=b.querySelector('.custodian-text');if(t){t.classList.remove('text-white');t.classList.add('text-on-surface');}const c=b.querySelector('.check-icon');if(c){c.classList.add('hidden');c.classList.remove('flex');}});btn.setAttribute('aria-checked','true');btn.classList.remove('bg-surface-container-lowest','text-on-surface','shadow-sm');btn.classList.add('bg-[#0F382C]','text-white','shadow-md','ring-2','ring-primary-fixed-dim');const st=btn.querySelector('.custodian-text');if(st){st.classList.remove('text-on-surface');st.classList.add('text-white');}const sc=btn.querySelector('.check-icon');if(sc){sc.classList.remove('hidden');sc.classList.add('flex');}const lbl=document.getElementById('btn-confirm-label');if(lbl)lbl.textContent='CONFIRMAR: ' + btn.dataset.name.split(' ')[0].toUpperCase();})(this)" role="radio" type="button">
+<span class="custodian-text truncate font-bold text-on-surface">Daniel Apaza Choque</span>
+<span class="check-icon hidden shrink-0 ml-2">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</span>
+</button></div>
+<!-- Botón Fijo Inferior Flotante de Confirmación -->
+<div class="fixed bottom-0 left-0 right-0 w-full z-50 px-margin pt-3 pb-safe bg-surface/95 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,34,24,0.12)] border-t border-outline-variant/30 flex flex-col gap-1">
+<button class="w-full h-16 min-h-[64px] rounded-xl bg-[#0F382C] text-white font-label-action text-label-action flex items-center justify-center gap-space-sm shadow-lg active:scale-[0.98] transition-all select-none" id="btn-confirm-patrol" type="button" onclick="const curName = document.querySelector('.custodian-btn[aria-checked=&quot;true&quot;]')?.getAttribute('data-name') || 'Víctor Raúl Cárdenas'; const label = document.getElementById('btn-confirm-label'); if(label) label.textContent = 'INICIANDO CON ' + curName.split(' ')[0].toUpperCase() + '...'; this.classList.add('opacity-90', 'pointer-events-none'); setTimeout(() =&gt; { window.location.href = '#durante-recorrido?custodio=' + encodeURIComponent(curName); }, 400);">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: &quot;FILL&quot; 1;">directions_walk</span>
+<span id="btn-confirm-label" class="">EMPEZAR</span>
+<span class="material-symbols-outlined text-[26px]">arrow_forward</span>
+</button>
+</div>
+</main>
+<script>
+  (function initCustodianSelector() {
+    const buttons = document.querySelectorAll('.custodian-btn');
+    const confirmBtn = document.getElementById('btn-confirm-patrol');
+    const confirmLabel = document.getElementById('btn-confirm-label');
+    
+    let selectedCustodian = "Roberto Mamani Quispe";
+
+    function selectCustodian(selectedBtn) {
+      // Deseleccionar todas las burbujas
+      buttons.forEach(btn => {
+        btn.setAttribute('aria-checked', 'false');
+        btn.classList.remove('bg-[#0F382C]', 'text-white', 'shadow-md', 'ring-2', 'ring-primary-fixed-dim');
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+
+        const textSpan = btn.querySelector('.custodian-text');
+        if (textSpan) {
+          textSpan.classList.remove('text-white');
+          textSpan.classList.add('text-on-surface');
+        }
+
+        const iconSpan = btn.querySelector('.check-icon');
+        if (iconSpan) {
+          iconSpan.classList.add('hidden');
+          iconSpan.classList.remove('flex');
+        }
+      });
+
+      // Activar exclusivamente el seleccionado
+      selectedBtn.setAttribute('aria-checked', 'true');
+      selectedBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+      selectedBtn.classList.add('bg-[#0F382C]', 'text-white', 'shadow-md', 'ring-2', 'ring-primary-fixed-dim');
+
+      const activeTextSpan = selectedBtn.querySelector('.custodian-text');
+      if (activeTextSpan) {
+        activeTextSpan.classList.remove('text-on-surface');
+        activeTextSpan.classList.add('text-white');
+      }
+
+      const activeIconSpan = selectedBtn.querySelector('.check-icon');
+      if (activeIconSpan) {
+        activeIconSpan.classList.remove('hidden');
+        activeIconSpan.classList.add('flex');
+      }
+
+      selectedCustodian = selectedBtn.dataset.name;
+
+      // Actualizar botón de acción inferior
+      if (confirmBtn) {
+        confirmBtn.removeAttribute('disabled');
+        confirmBtn.classList.remove('opacity-60', 'pointer-events-none');
+      }
+      if (confirmLabel) {
+        confirmLabel.textContent = `CONFIRMAR Y EMPEZAR`;
+      }
+    }
+
+    // Registrar eventos táctiles y de teclado
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => selectCustodian(btn));
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          selectCustodian(btn);
+        }
+      });
+    });
+
+    // Acción de confirmación con feedback visual
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        const originalContent = confirmBtn.innerHTML;
+        confirmBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[28px] animate-spin">progress_activity</span>
+          <span>INICIANDO CON ${selectedCustodian.toUpperCase()}...</span>
+        `;
+        confirmBtn.classList.add('pointer-events-none', 'opacity-90');
+
+        setTimeout(() => {
+          alert('Custodio asignado: ' + selectedCustodian + '\\n\\nPatrullaje iniciado con coordenadas GPS activadas.');
+          confirmBtn.innerHTML = originalContent;
+          confirmBtn.classList.remove('pointer-events-none', 'opacity-90');
+        }, 800);
+      });
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+</body></html>

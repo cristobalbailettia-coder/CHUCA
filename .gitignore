@@ -1,0 +1,17 @@
+# Dependencias y compilados
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Claves y configuración local (usa .env.example como plantilla)
+.env
+.env.*
+!.env.example
+
+# Registros y archivos del sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Configuración local de la herramienta de desarrollo
+.claude/

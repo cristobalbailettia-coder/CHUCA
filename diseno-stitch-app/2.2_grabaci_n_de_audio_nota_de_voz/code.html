@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>2.2 Grabación de Audio (Nota de Voz)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            forest: {
+              900: '#061D15',
+              850: '#0A261D',
+              800: '#0F382C',
+              700: '#144D3D',
+              600: '#1B6550',
+              500: '#228B6D',
+              400: '#34D399',
+              100: '#E6F4EF'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.18); opacity: 0.25; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    @keyframes barAnim {
+      0%, 100% { height: 16%; }
+      50% { height: 95%; }
+    }
+    .pulse-ring {
+      animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .wave-bar {
+      animation: barAnim 1.2s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#061D15] text-white font-sans antialiased flex justify-center items-center min-h-screen p-0 m-0 select-none">
+<!-- Mobile Viewport Container (390px x 844px exact ratio) -->
+<main class="w-full max-w-md h-screen max-h-[100dvh] bg-gradient-to-b from-[#0A261D] via-[#061D15] to-[#04120D] text-white flex flex-col justify-between relative shadow-2xl overflow-hidden border border-emerald-950/40 select-none pb-safe">
+<!-- Top Bar / App Header -->
+<header class="px-5 pt-6 pb-4 flex items-center justify-between z-20 border-b border-emerald-900/40 bg-[#0A261D]/90 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 rounded-full bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center hover:bg-emerald-900 active:scale-95 transition-all text-emerald-200" id="btnBack" title="Cancelar y volver">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div><h1 class="text-base font-bold text-slate-100 leading-tight">Nota de Voz</h1></div>
+</div>
+<!-- Telemetry Badge (GPS & Battery) -->
+<div class="w-10 h-10 rounded-full bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-emerald-400 shadow-inner"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.04 8.79-7 9.92-3.96-1.13-7-5.38-7-9.92V6.3l7-3.12zM12 6a3 3 0 00-3 3c0 2 3 5 3 5s3-3 3-5a3 3 0 00-3-3z"></path></svg></div>
+</header>
+<!-- Context Info Strip -->
+<!-- Main Visual Stage: Recording Waves & Timer -->
+<section class="flex-1 flex flex-col items-center justify-center px-6 relative z-10">
+<!-- Live Status Pill -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold tracking-wide mb-6 uppercase" id="recordingBadge">
+<span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+<span class="" id="recordingStatusText">Audio procesado y guardado</span>
+</div>
+<!-- Large Prominent Timer -->
+<div class="text-center mb-6">
+<div class="font-mono text-5xl font-extrabold tracking-wider text-white drop-shadow-md" id="audioTimer">00:41</div>
+<p class="text-xs text-emerald-300/70 mt-1 font-medium">Hable claro hacia el micrófono del dispositivo</p>
+</div>
+<!-- Real-time Animated Audio Waveform -->
+<div class="w-full max-w-[280px] h-24 bg-[#0A261D]/70 rounded-2xl border border-emerald-800/40 px-4 py-3 flex items-center justify-between gap-1 shadow-inner relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-emerald-500/5 pointer-events-none"></div>
+<!-- 20 Animated Sound Bars with staggered animation delays -->
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.1s; height: 35%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.35s; height: 60%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-300 rounded-full" style="animation-delay: 0.2s; height: 85%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.6s; height: 45%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.15s; height: 90%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-300 rounded-full" style="animation-delay: 0.45s; height: 70%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.8s; height: 30%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.25s; height: 95%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-300 rounded-full" style="animation-delay: 0.7s; height: 65%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.05s; height: 80%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.5s; height: 40%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-300 rounded-full" style="animation-delay: 0.3s; height: 90%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.75s; height: 55%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.4s; height: 75%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-300 rounded-full" style="animation-delay: 0.9s; height: 50%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.2s; height: 85%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-400 rounded-full" style="animation-delay: 0.65s; height: 35%; animation-play-state: paused; opacity: 0.6;"></div>
+<div class="wave-bar w-1.5 bg-emerald-300 rounded-full" style="animation-delay: 0.1s; height: 65%; animation-play-state: paused; opacity: 0.6;"></div>
+</div>
+<!-- Primary Big Stop Action Button -->
+<div class="mt-6 flex flex-col items-center">
+<div class="relative flex items-center justify-center">
+<!-- Generous pulse animation rings for tactile field affordance -->
+<div class="pulse-ring absolute w-36 h-36 rounded-full bg-red-600/30"></div>
+<div class="pulse-ring absolute w-32 h-32 rounded-full bg-red-500/40" style="animation-delay: 0.5s;"></div>
+<!-- Large 112px Tap to Stop Button -->
+<button class="relative z-10 w-28 h-28 rounded-full bg-gradient-to-tr from-red-700 via-red-600 to-rose-500 border-4 border-white/90 shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all text-white group cursor-pointer" id="btnStopRecord">
+<span class="w-9 h-9 bg-white rounded-lg shadow-inner transition-transform group-hover:scale-90"></span>
+</button>
+</div>
+<p class="text-base font-extrabold text-rose-300 mt-4 tracking-wider uppercase text-center">
+          Toca para detener y guardar
+        </p>
+
+</div>
+</section>
+<!-- Optional Note & Metadata Tray -->
+<div class="px-5 pb-6 pt-2 bg-gradient-to-t from-[#04120D] via-[#0A261D]/90 to-transparent z-10 flex flex-col gap-3">
+<!-- Optional quick tag selection for field guardians -->
+<!-- Action buttons -->
+<div class="flex items-center gap-3 pt-1">
+<button class="w-full h-14 py-4 px-6 rounded-xl bg-slate-800/90 hover:bg-slate-700 active:scale-[0.98] border border-slate-600/60 text-slate-200 text-sm font-bold tracking-wide transition-all flex items-center justify-center uppercase shadow-md cursor-pointer" id="btnCancel">
+          Descartar Grabación
+        </button>
+</div>
+</div>
+<!-- Floating Toast Notification (Appears on save) -->
+<div class="absolute top-5 left-4 right-4 z-50 transform transition-all duration-500 ease-out pointer-events-none -translate-y-24 opacity-0" id="toastNotification">
+<div class="bg-[#0F382C] border-2 border-emerald-400 text-white p-4 rounded-2xl shadow-2xl flex items-center gap-3.5 backdrop-blur-lg">
+<div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-400/40">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-xs font-bold text-emerald-200 uppercase tracking-wider">¡Nota de voz registrada!</h4>
+<p class="text-xs text-white/90 truncate font-medium">Audio #02 guardado con éxito y vinculado al GPS.</p>
+</div>
+</div>
+</div>
+</main>
+<script>
+    // Timer simulation
+    let seconds = 14;
+    const timerElem = document.getElementById('audioTimer');
+    const timerInterval = setInterval(() => {
+      seconds++;
+      const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      if (timerElem) timerElem.textContent = `${mins}:${secs}`;
+    }, 1000);
+
+    // Save and Toast trigger
+    function triggerSaveAndExit() {
+      clearInterval(timerInterval);
+      const toast = document.getElementById('toastNotification');
+      const badge = document.getElementById('recordingBadge');
+      const statusText = document.getElementById('recordingStatusText');
+      
+      // Stop recording visual status
+      if (badge) {
+        badge.className = "inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold tracking-wide mb-6 uppercase";
+      }
+      if (statusText) statusText.textContent = "Audio procesado y guardado";
+
+      // Stop wave animation
+      document.querySelectorAll('.wave-bar').forEach(bar => {
+        bar.style.animationPlayState = 'paused';
+        bar.style.opacity = '0.6';
+      });
+
+      // Show toast
+      if (toast) {
+        toast.classList.remove('-translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        
+        // Auto-dismiss after 3 seconds and navigate back to screen 2
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('-translate-y-24', 'opacity-0');
+        }, 3000);
+      }
+    }
+
+    document.getElementById('btnStopRecord')?.addEventListener('click', triggerSaveAndExit);
+    document.getElementById('btnSaveNow')?.addEventListener('click', triggerSaveAndExit);
+    document.getElementById('btnCancel')?.addEventListener('click', () => {
+      alert("Grabación cancelada.");
+    });
+    document.getElementById('btnBack')?.addEventListener('click', () => {
+      alert("Volviendo a la pantalla de patrullaje...");
+    });
+  </script>
+
+
+</body></html>
